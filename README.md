@@ -29,17 +29,17 @@ You can run the script directly from your terminal. By default, it generates a r
 
 ```bash
 # Generate a default 16-character password
-php generate_password.php
+php index.php
 ```
 
 You can also specify a custom length by passing an argument:
 
 ```bash
 # Generate a 32-character password
-php generate_password.php 32
+php index.php 32
 
 # Generate an 8-character password
-php generate_password.php 8
+php index.php 8
 ```
 
 ## 🤝 Contributing
