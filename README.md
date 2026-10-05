@@ -1,45 +1,52 @@
-# Auto File Sorter & Zipper
+# 🔒 PHP Secure Password Generator
 
-این اسکریپت ساده و کاربردی با زبان **پایتون** نوشته شده است و به شما کمک می‌کند تا فایل‌های به‌هم‌ریخته‌ی داخل یک پوشه را بر اساس پسوند (فرمت) آن‌ها مرتب کنید. پس از دسته‌بندی فایل‌ها در پوشه‌های مجزا، برنامه کل دایرکتوری را به صورت خودکار فشرده (Zip) کرده و در دسکتاپ شما ذخیره می‌کند.
+A super simple, blazing fast, and cryptographically secure password generator written in pure PHP for the Command Line Interface (CLI).
 
-## ✨ ویژگی‌ها (Features)
+![PHP Version](https://img.shields.io/badge/PHP-%E2%89%A5%207.0-777BB4?style=flat-square&logo=php)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
-*   **تشخیص خودکار فرمت‌ها:** اسکریپت به صورت خودکار تمام پسوندهای موجود در پوشه را شناسایی می‌کند.
-*   **پوشه‌بندی هوشمند:** برای هر فرمت (مثل `jpg`، `pdf`، `mp4`) یک پوشه جداگانه با همان نام می‌سازد و فایل‌ها را به داخل آن منتقل می‌کند.
-*   **فشرده‌سازی خودکار:** پس از اتمام مرتب‌سازی، کل پوشه به یک فایل `.zip` تبدیل می‌شود.
-*   **مدیریت خطا:** در صورت وارد کردن آدرس اشتباه یا نامعتبر، برنامه با پیغام `Invalid Address` از توقف ناگهانی (Crash) جلوگیری می‌کند.
+## ✨ Features
 
-## 🛠 پیش‌نیازها (Prerequisites)
+- **🛡️ Cryptographically Secure:** Uses PHP's native `random_int()` function to ensure true randomness.
+- **🚀 Zero Dependencies:** Built with pure PHP. No need for Composer or external libraries.
+- **💻 CLI Friendly:** Designed specifically to be run from your terminal.
+- **🎨 Visual Feedback:** Uses CLI color codes to highlight your generated password.
 
-برای اجرای این کد تنها به نصب بودن **Python 3.x** روی سیستم خود نیاز دارید. 
-این برنامه از کتابخانه‌های استاندارد و داخلی پایتون (`os` و `shutil`) استفاده می‌کند و نیازی به نصب هیچ پکیج اضافه‌ای از طریق `pip` ندارد.
+## 🚀 Installation
 
-## 🚀 نحوه استفاده (Usage)
-
-1. فایل اسکریپت (مثلاً `main.py`) را اجرا کنید.
-2. در ترمینال یا خط فرمان، برنامه از شما آدرس پوشه‌ای که می‌خواهید مرتب شود را درخواست می‌کند:
-   ```text
-   Enter The Folder's Address:
-   ```
-3. مسیر پوشه مورد نظر را وارد کنید (مثال: `D:\Downloads\MyFiles`) و `Enter` را بزنید.
-4. منتظر بمانید تا عملیات تمام شود و پیام زیر را مشاهده کنید:
-   ```text
-   Done! Zipped Folder Is On Your Desktop!
-   ```
-
-## ⚠️ نکته مهم برای توسعه‌دهندگان (Important Note)
-
-در کد فعلی، مسیر ذخیره‌سازی فایل زیپ برای یک کاربر خاص (`Mani`) تنظیم شده است:
-```python
-shutil.make_archive('C:/Users/Mani/Desktop/Sorted_Files','zip',os.path.dirname(file_location),os.path.basename(file_location))
+1. Clone the repository to your local machine:
+```bash
+git clone https://github.com/AriaShadravan/php-secure-password-generator-v1.git
 ```
-**پیش از اجرای کد در سیستم خود،** حتماً کلمه `Mani` را به نام کاربری سیستم خود در کد تغییر دهید. برای اینکه کد به صورت پویا (Dynamic) در هر سیستمی به درستی کار کند، پیشنهاد می‌شود خط بالا را با کد زیر جایگزین کنید:
-
-```python
-import os
-desktop_path = os.path.join(os.path.expanduser("~"), "Desktop", "Sorted_Files")
-shutil.make_archive(desktop_path, 'zip', os.path.dirname(file_location), os.path.basename(file_location))
+2. Navigate to the project directory:
+```bash
+cd php-secure-password-generator-v1
 ```
 
-## 🤝 مشارکت (Contributing)
-اگر ایده‌ای برای بهبود این کد دارید (مثلاً اضافه کردن رابط کاربری گرافیکی (GUI) یا پشتیبانی از مرتب‌سازی بر اساس تاریخ)، خوشحال می‌شوم آن را Fork کنید و Pull Request بفرستید!
+## 🛠️ Usage
+
+You can run the script directly from your terminal. By default, it generates a robust 16-character password.
+
+```bash
+# Generate a default 16-character password
+php generate_password.php
+```
+
+You can also specify a custom length by passing an argument:
+
+```bash
+# Generate a 32-character password
+php generate_password.php 32
+
+# Generate an 8-character password
+php generate_password.php 8
+```
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! 
+Feel free to check the [issues page](https://github.com/AriaShadravan/php-secure-password-generator-v1/issues).
+
+## 📄 License
+
+This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
